@@ -1,0 +1,81 @@
+html,
+body,
+#app {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ivory);
+}
+* {
+    cursor: none;
+    user-select: none;
+}
+
+:root {
+    --ivory: #f5f2f0;
+}
+
+.small-title {
+    font-family: "HelveticaExt";
+    font-weight: 400;
+    font-size: 64px;
+    letter-spacing: -1.28px;
+    width: 100%;
+    text-align: center;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.tag {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Pretend";
+    letter-spacing: -0.8px;
+    border: solid #000 1px;
+}
+.loading {
+    font-family: "Pretend";
+    font-weight: 300;
+    opacity: 0.4;
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+@font-face {
+    font-family: "HelveticaExt";
+    src: url(./assets/fonts/helveticaExt.woff);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "HelveticaExt";
+    src: url(./assets/fonts/helveticaExtLight.woff);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Noto Serif";
+    src: url(./assets/fonts/NotoSerifKR-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Noto Serif";
+    src: url(./assets/fonts/NotoSerifKR-Light.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Noto Serif";
+    src: url(./assets/fonts/NotoSerifKR-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Pretend";
+    src: url(./assets/fonts/PretendardVariable.woff2);
+}
