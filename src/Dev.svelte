@@ -1,7 +1,5 @@
 <script>
-import button from "./lib/button";
 import getData from "./lib/getData";
-import hover from "./lib/hover";
 import Modal from "./lib/Modal.svelte";
 import Work from "./lib/Work.svelte";
 
@@ -44,7 +42,7 @@ getData(["DEV"]).then((d) => (data = d.DEV));
                     on:click={() => (currentWork = work)}
                 />
             {/each}
-            <div
+            <!-- <div
                 class="add-work"
                 use:hover={"arrow"}
                 use:button
@@ -54,7 +52,7 @@ getData(["DEV"]).then((d) => (data = d.DEV));
                 aria-label="새로운 작업 의뢰"
             >
                 <span>새로운 작업 의뢰</span>
-            </div>
+            </div> -->
         </div>
         <div class="notice">
             *위 작업물들은 기획 단계에 거의 또는 전혀 참여하지 않았으며 개발

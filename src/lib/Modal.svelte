@@ -42,30 +42,32 @@ function close() {
                 </svg>
             </div>
         </div>
-        <div class="title">{@html title}</div>
-        <div class="tags">
-            {#each tags as tag}
-                <div class="tag">{tag}</div>
-            {/each}
-        </div>
-        {#if img}
-            <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
-            <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-            <img
-                class:url
-                src={img}
-                alt={title}
-                draggable="false"
-                on:click={url ? () => window.open(url, "_blank") : null}
-                tabindex="0"
-                use:hover={url ? "arrow" : ""}
-                use:button
-            />
-            {#if url}
-                <div class="guide">이미지 클릭해서 접속하기</div>
+        <div class="body">
+            <div class="title">{@html title}</div>
+            <div class="tags">
+                {#each tags as tag}
+                    <div class="tag">{tag}</div>
+                {/each}
+            </div>
+            {#if img}
+                <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+                <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+                <img
+                    class:url
+                    src={img}
+                    alt={title}
+                    draggable="false"
+                    on:click={url ? () => window.open(url, "_blank") : null}
+                    tabindex="0"
+                    use:hover={url ? "arrow" : ""}
+                    use:button
+                />
+                {#if url}
+                    <div class="guide">이미지 클릭해서 접속하기</div>
+                {/if}
             {/if}
-        {/if}
-        <div class="content">{@html content}</div>
+            <div class="content">{@html content}</div>
+        </div>
     </div>
 </div>
 
@@ -109,6 +111,14 @@ function close() {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: auto;
+    width: 100%;
+    align-items: center;
 }
 .small-title {
     font-family: "Noto Serif";
@@ -165,7 +175,6 @@ img.url:focus {
     font-weight: 300;
     line-height: 143%;
     letter-spacing: -0.72px;
-    overflow: auto;
     max-height: 100px;
 }
 </style>

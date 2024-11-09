@@ -6,7 +6,6 @@ import hover from "./lib/hover";
 let data = null;
 let barCovers = [];
 getData(["STACK", "CONTACT"]).then(async (d) => {
-    console.log(d);
     data = d;
     barCovers = new Array(d.STACK.length);
     await tick();
@@ -17,7 +16,6 @@ getData(["STACK", "CONTACT"]).then(async (d) => {
 
 let observer = new IntersectionObserver((evt) => {
     evt.forEach((i) => {
-        console.log(i.isIntersecting);
         // @ts-ignore
         i.target.style.width = i.isIntersecting ? "var(--cover)" : "100%";
     });
